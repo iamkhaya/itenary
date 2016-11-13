@@ -1,20 +1,40 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.step{
 
+.navbar-default {
+	background-color: white;
 }
 
-.step .box .badge {
-	width: 193px;
-	height: 193px;
-	background: #ffd613;
-	text-align: center;
-	line-height: 190px;
-	font-size: 80px;
-	color: #000000;
-	border-radius: 100%;
-	font-family: 'FontAwesome';
+.box{
+	background-color: #fff;
+}
+
+.menu{
+	color: red;
+	float: right;
+	margin-top: 15px;
+}
+
+.logo{
+	color:red;
+	float:left;
+}
+.step {
 	display: block;
-	margin: 0 0 32px;
+   width: 140px;
+   height: 140px;
+   background: red;
+   -moz-border-radius: 70px;
+   -webkit-border-radius: 70px;
+   border-radius: 70px;
+	 color: white;
+}
+
+.step_details{
+	text-align: justify;
+}
+
+.center_icon{
+	margin-top: 51px;
 }
