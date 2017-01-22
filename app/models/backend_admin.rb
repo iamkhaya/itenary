@@ -1,0 +1,2 @@
+class BackendAdmin < ApplicationRecord
+end

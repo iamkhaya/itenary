@@ -1,0 +1,2 @@
+class BackendAdminsController < ApplicationController
+end
