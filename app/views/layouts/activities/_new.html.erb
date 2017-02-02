@@ -1,3 +1,5 @@
+
+<% @title = "Chills and Thrills - Add new activity" %>
 <%= form_for :activity, url: activities_path do |f| %>
   <p>
     <%= f.label :name %><br>
@@ -15,6 +17,6 @@
   </p>
 
   <p>
-    <%= f.submit %>
+    <%= f.submit "Add new Activity" %>
   </p>
 <% end %>
