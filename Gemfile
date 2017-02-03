@@ -20,7 +20,7 @@ gem 'therubyracer', platforms: :ruby
 gem 'jquery-rails'
 
 # Add font-awesome support
-gem "font-awesome-rails"
+gem 'font-awesome-sass', '~> 4.7.0'
 
 # Add paperclip support
 gem "paperclip", "~> 5.0.0"
