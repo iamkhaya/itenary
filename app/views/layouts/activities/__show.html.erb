@@ -1,0 +1,39 @@
+<%= form_for :activity, url: activities_path do |f| %>
+      <div class="col-md-offset-2 container-fluid">
+
+          <div class="page-header">
+              <h2 style="text-align: left;">View Activity</h2>
+          </div>
+
+          <div class="row">
+
+              <div class="col-md-6">
+                  <div class="form-group">
+                      <%= f.label :Name, style: 'float: left;' %>
+                      <%= f.text_field :name, class: 'form-control', value: @activity.name,:readonly => true %>
+                  </div>
+              </div>
+
+              <div class="col-md-6">
+                  <div class="form-group">
+                      <%= f.label :Category, style: 'float: left;' %>
+                      <%= f.text_field :category, class: 'form-control', value: @activity.category, :readonly => true%>
+                  </div>
+              </div>
+
+              <div class="col-md-6">
+                  <div class="form-group">
+                      <%= f.label :Description, style: 'float: left;' %>
+                      <%= f.text_area :description, class: 'form-control', size: "24x6", value: @activity.description, :readonly => true %>
+                  </div>
+              </div>
+
+              <div class="col-md-12">
+
+                  <div class="form-group">
+                      <%= button_to('Back To All Activities', {:action => 'index', :controller => '/activities'}, method: :get, class: 'btn btn-primary', :style => 'float: left;' ) %>
+                  </div>
+
+              </div>
+          </div>
+          <% end %>
