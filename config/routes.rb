@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
     resources :activities
+		resources :categories
     resources :home
     resources :backend_admins
 
