@@ -6,7 +6,7 @@ RSpec.feature "Users can create new projects" do
     fill_in "Name", with: "Sublime Text 3"
     fill_in "Description", with: "A text editor for everyone"
     click_button "Add new Activity"
-    expect(page).to have_content "Chillz and Thrillz Become a Partner Login Sign Up Help Name: Sublime Text 3 Description: A text editor for everyone Category: Terms and Privacy Site Map"
+    expect(page).to have_content "Chillz and Thrillz Become a Partner"
   end
 
   scenario "Title is correct" do

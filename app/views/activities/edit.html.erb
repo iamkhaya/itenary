@@ -1,0 +1,60 @@
+<div class="container-fluid">
+    <div class="row">
+        <%= render 'layouts/sidebar' %>
+
+        <div class="col-md-offset-2 container-fluid">
+
+            <div class="page-header">
+                <%= button_to('Back To All Activities', {:action => 'index', :controller => '/activities'}, method: :get, class: 'btn btn-primary', :style => 'float: right;' ) %>
+
+                <h2 style="text-align: left; display: inline;">Edit Activity</h2>
+            </div>
+
+            <div class="row">
+                <%= form_for :activity, url: activity_path(@activity), method: :patch do |f| %>
+                <% if @activity.errors.any? %>
+                <div id="error_explanation">
+                    <h2>
+                        <%= pluralize(@activity.errors.count, "error") %>
+                        prohibited this article from being saved:
+                    </h2>
+                    <ul>
+                        <% @activity.errors.full_messages.each do |msg| %>
+                        <li><%= msg %></li>
+                        <% end %>
+                    </ul>
+                </div>
+                <% end %>
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <%= f.label :Name, style: 'float: left;' %>
+                        <%= f.text_field :name, class: 'form-control', value: @activity.name %>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <%= f.label :Category, style: 'float: left;' %>
+                        <%= f.text_field :category, class: 'form-control', value: @activity.category%>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <%= f.label :Description, style: 'float: left;' %>
+                        <%= f.text_area :description, class: 'form-control', size: "24x6", value: @activity.description %>
+                    </div>
+                </div>
+
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <%= f.submit "Update Activity", class:'btn btn-default', style: 'float: left;' %>
+                    </div>
+                </div>
+
+            </div>
+            <% end %>
+
+        </div>
+    </div>

@@ -19,6 +19,9 @@ gem 'therubyracer', platforms: :ruby
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 
+# Pagination
+gem 'will_paginate', '~> 3.1.0'
+
 # Add font-awesome support
 gem 'font-awesome-sass', '~> 4.7.0'
 
