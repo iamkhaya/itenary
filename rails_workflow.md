@@ -6,7 +6,7 @@
 
 2. Add resources to `config/route.rb`
       ```ruby
-      resources :category`
+      resources :category
       ```
 
 3. Define the new method in your controller
