@@ -1,0 +1,106 @@
+<%= render 'layouts/backend_admins/_backend_header' %>
+<div class="container-fluid">
+    <div class="row">
+        <%= render 'layouts/backend_admins/_sidebar' %>
+
+        <p id="notice"><%= notice %></p>
+
+        <%= form_for(@address) do |f| %>
+        <div class="col-md-offset-2 container-fluid">
+            <% if @address.errors.any? %>
+            <div id="error_explanation">
+                <h2><%= pluralize(@address.errors.count, "error") %>
+                    prohibited this address from being saved:</h2>
+
+                <ul>
+                    <% @address.errors.full_messages.each do |message| %>
+                    <li><%= message %></li>
+                    <% end %>
+                </ul>
+            </div>
+            <% end %>
+
+            <div class="page-header">
+                <h2 style="text-align: left;">Address</h2>
+            </div>
+
+            <div class="row">
+
+                <div class="col-md-6">
+                    <div class="form-group">
+
+                        <%= f.label :street_number %>
+                        <%= f.number_field :street_number , class: 'form-control', value: @address.street_number, :readonly => true%>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <%= f.label :street_name %>
+                        <%= f.text_field :street_name, class: 'form-control', value: @address.street_name, :readonly => true%>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <%= f.label :suburb %>
+                        <%= f.text_field :suburb, class: 'form-control', value: @address.suburb, :readonly => true %>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <%= f.label :city %>
+                        <%= f.text_field :city, class: 'form-control', value: @address.city, :readonly => true %>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <%= f.label :region %>
+                        <%= f.text_field :region , class: 'form-control', value: @address.region, :readonly => true%>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <%= f.label :postal_code %>
+                        <%= f.number_field :postal_code, class: 'form-control',value: @address.postal_code, :readonly => true%>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <%= f.label :box_number %>
+                        <%= f.number_field :box_number, class: 'form-control', value: @address.box_number, :readonly => true %>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <%= f.label :country %>
+                        <%= f.text_field :country, class: 'form-control', value: @address.country, :readonly => true %>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <%= f.label :continent %>
+                        <%= f.text_field :continent, class: 'form-control', value: @address.continent, :readonly => true %>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="form-group">
+                        <%= button_to "Edit", edit_address_path(@address), class:'btn btn-default', style: 'float: left;' %>
+                        <%= button_to "Back", addresses_path, class:'btn btn-default', style: 'float: left;' %>
+                    </div>
+                </div>
+
+            </div>
+            <% end %>
+
+        </div>
+    </div>
+    <%= render 'layouts/backend_admins/_footer' %>

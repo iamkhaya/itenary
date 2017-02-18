@@ -1,0 +1,1 @@
+json.array! @providers_payment_types, partial: 'providers_payment_types/providers_payment_type', as: :providers_payment_type

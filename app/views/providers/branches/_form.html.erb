@@ -1,0 +1,80 @@
+<%= form_for(providers_branch) do |f| %>
+<div class="col-md-offset-2 container-fluid">
+  <% if providers_branch.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(providers_branch.errors.count, "error") %> prohibited this providers_branch from being saved:</h2>
+
+      <ul>
+      <% providers_branch.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="page-header">
+      <h2 style="text-align: left;">Add New Branch</h2>
+  </div>
+
+  <div class="row">
+
+      <div class="col-md-6">
+          <div class="form-group">
+              <%= f.label :provider , style: 'float: left;' %>
+              <%= f.text_field :provider , class: 'form-control', placeholder:'Provider' %>
+          </div>
+      </div>
+
+      <div class="col-md-6">
+          <div class="form-group">
+              <%= f.label :address  , style: 'float: left;' %>
+              <%= f.text_field :address  , class: 'form-control', placeholder:'Address' %>
+          </div>
+      </div>
+
+      <div class="col-md-6">
+          <div class="form-group">
+              <%= f.label :phone_number , style: 'float: left;' %>
+              <%= f.number_field :phone_number , class: 'form-control', placeholder:'Phone Number' %>
+          </div>
+      </div>
+
+      <div class="col-md-6">
+          <div class="form-group">
+              <%= f.label :landline , style: 'float: left;' %>
+              <%= f.number_field :landline , class: 'form-control', placeholder:'Land Line' %>
+          </div>
+      </div>
+
+      <div class="col-md-6">
+          <div class="form-group">
+              <%= f.label :cell_number , style: 'float: left;' %>
+              <%= f.number_field :cell_number , class: 'form-control', placeholder:'Cellphone Number' %>
+          </div>
+      </div>
+
+      <div class="col-md-6">
+          <div class="form-group">
+              <%= f.label :opening_times , style: 'float: left;' %>
+              <%= f.datetime_select :opening_times , class: 'form-control', placeholder:'Business Hoours' %>
+          </div>
+      </div>
+
+      <div class="col-md-6">
+          <div class="form-group">
+              <%= f.label :bank_details , style: 'float: left;' %>
+              <%= f.text_field :bank_detail, class: 'form-control', placeholder:'Bank Details' %>
+          </div>
+      </div>
+  </div>
+
+  <div class="col-md-12">
+      <div class="form-group">
+          <%= f.submit "Add New Branch", class:'btn btn-default', style: 'float: left;' %>
+      </div>
+  </div>
+
+
+
+<% end %>
+</div>

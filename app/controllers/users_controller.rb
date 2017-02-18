@@ -3,20 +3,24 @@ class UsersController < ApplicationController
 
   # GET /users
   def index
-    @users = User.all
+    @users = User.paginate(page: params[:page], per_page: 5).order('id Desc').all
+    render :layout =>false
   end
 
   # GET /users/1
   def show
+    render :layout =>false
   end
 
   # GET /users/new
   def new
     @user = User.new
+    render :layout =>false
   end
 
   # GET /users/1/edit
   def edit
+    render :layout =>false
   end
 
   # POST /users

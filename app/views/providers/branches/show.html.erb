@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>String:</strong>
+  <%= @providers_branch.string %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @providers_branch.address %>
+</p>
+
+<p>
+  <strong>Phone number:</strong>
+  <%= @providers_branch.phone_number %>
+</p>
+
+<p>
+  <strong>Landline:</strong>
+  <%= @providers_branch.landline %>
+</p>
+
+<p>
+  <strong>Cell number:</strong>
+  <%= @providers_branch.cell_number %>
+</p>
+
+<p>
+  <strong>Opening times:</strong>
+  <%= @providers_branch.opening_times %>
+</p>
+
+<p>
+  <strong>Bank detail:</strong>
+  <%= @providers_branch.bank_detail %>
+</p>
+
+<%= link_to 'Edit', edit_providers_branch_path(@providers_branch) %> |
+<%= link_to 'Back', providers_branches_path %>

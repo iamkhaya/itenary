@@ -1,0 +1,71 @@
+<%= form_for(@providers_bank_detail) do |f| %>
+<div class="col-md-offset-2 container-fluid">
+  <% if @providers_bank_detail.errors.any? %>
+
+    <div id="error_explanation">
+      <h2><%= pluralize(providers_bank_detail.errors.count, "error") %> prohibited this providers_bank_detail from being saved:</h2>
+
+      <ul>
+      <% providers_bank_detail.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="page-header">
+      <h2 style="text-align: left;">Add New Bank Details</h2>
+  </div>
+
+    <div class="row">
+      <div class="col-md-6">
+          <div class="form-group">
+
+              <%= f.label :bank %>
+              <%= f.text_field :bank , class: 'form-control', placeholder:'Bank Name'%>
+          </div>
+      </div>
+
+      <div class="col-md-6">
+          <div class="form-group">
+
+              <%= f.label :account_number %>
+              <%= f.number_field :account_number , class: 'form-control', placeholder:'Account Number'%>
+          </div>
+      </div>
+
+      <div class="col-md-6">
+          <div class="form-group">
+
+              <%= f.label :branch_code %>
+              <%= f.text_field :branch_code , class: 'form-control', placeholder:'Branch Code'%>
+          </div>
+      </div>
+
+      <div class="col-md-6">
+          <div class="form-group">
+
+              <%= f.label :branch %>
+              <%= f.text_field :branch , class: 'form-control', placeholder:'Bank Branch'%>
+          </div>
+      </div>
+
+      <div class="col-md-6">
+          <div class="form-group">
+
+              <%= f.label :swift_code %>
+              <%= f.text_field :swift_code , class: 'form-control', placeholder:'Swift Code'%>
+          </div>
+      </div>
+
+    </div>
+
+    <div class="col-md-12">
+        <div class="form-group">
+            <%= f.submit "Add New Bank Details", class:'btn btn-default', style: 'float: left;' %>
+        </div>
+    </div>
+
+
+<% end %>
+</div>

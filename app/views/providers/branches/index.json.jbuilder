@@ -1,0 +1,1 @@
+json.array! @providers_branches, partial: 'providers_branches/providers_branch', as: :providers_branch
