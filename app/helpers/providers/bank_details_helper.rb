@@ -1,0 +1,2 @@
+module Providers::BankDetailsHelper
+end

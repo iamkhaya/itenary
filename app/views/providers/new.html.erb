@@ -1,5 +1,52 @@
-<h1>New Provider</h1>
+<%= render 'layouts/backend_admins/_backend_header' %>
+div class="container-fluid">
+<div class="row">
+    <%= render 'layouts/backend_admins/_sidebar' %>
 
-<%= render 'form', provider: @provider %>
+    <%= form_for :provider, url: providers_path do |f| %>
+    <div class="col-md-offset-2 container-fluid">
 
-<%= link_to 'Back', providers_path %>
+        <div class="page-header">
+            <h2 style="text-align: left;">Add New Provider</h2>
+        </div>
+
+        <div class="row">
+
+            <div class="col-md-6">
+                <div class="form-group">
+                    <%= f.label :Name, style: 'float: left;' %>
+                    <%= f.text_field :name, class: 'form-control', placeholder:'Provider Name' %>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="form-group">
+                    <%= f.label :Payment_Type, style: 'float: left;' %>
+                    <%= f.text_field :payment_type, class: 'form-control', placeholder:'Payment Type' %>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="form-group">
+                    <%= f.label :Branch, style: 'float: left;' %>
+                    <%= f.text_field :branch, class: 'form-control', placeholder:'Branch' %>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <%= f.label :Bank_Detail, style: 'float: left;' %>
+                    <%= f.text_field :bank_detail, class: 'form-control', placeholder:'Bank Detail' %>
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <div class="form-group">
+                    <%= f.submit "Add New Provider", class:'btn btn-default', style: 'float: left;' %>
+                </div>
+            </div>
+        </div>
+        <% end %>
+
+    </div>
+</div>
+<%= render 'layouts/backend_admins/_footer' %>

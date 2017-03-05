@@ -1,0 +1,1 @@
+json.partial! "providers_payment_types/providers_payment_type", providers_payment_type: @providers_payment_type

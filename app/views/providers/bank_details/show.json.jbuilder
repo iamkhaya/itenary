@@ -1,0 +1,1 @@
+json.partial! "providers_bank_details/providers_bank_detail", providers_bank_detail: @providers_bank_detail

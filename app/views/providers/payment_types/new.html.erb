@@ -1,0 +1,33 @@
+<%= render 'layouts/backend_admins/_backend_header' %>
+div class="container-fluid">
+    <div class="row">
+        <%= render 'layouts/backend_admins/_sidebar' %>
+        <%= form_for :providers_payment_type, url: providers_payment_types_path do |f| %>
+        <div class="col-md-offset-2 container-fluid">
+
+            <div class="page-header">
+                <h2 style="text-align: left;">Add New Payment Type</h2>
+            </div>
+
+            <div class="row">
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <%= f.label :Type, style: 'float: left;' %>
+                        <%= f.text_field :payment_type, class: 'form-control', placeholder:'Payment Type' %>
+                    </div>
+                </div>
+
+
+
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <%= f.submit "Add New Payment Type", class:'btn btn-default', style: 'float: left;' %>
+                    </div>
+                </div>
+              </div>
+            <% end %>
+
+    </div>
+</div>
+<%= render 'layouts/backend_admins/_footer' %>

@@ -2,17 +2,21 @@ class CategoriesController < ApplicationController
 
   def index
       @categories = Category.paginate(page: params[:page], per_page: 2).order('id Desc').all
+        render :layout => false
   end
 
   def show
     @category = Category.find(params[:id])
+      render :layout => false
   end
 
   def new
+      render :layout => false
   end
 
   def edit
     @category = Category.find(params[:id])
+      render :layout => false
   end
 
   def create

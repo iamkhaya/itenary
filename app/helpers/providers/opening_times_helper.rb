@@ -1,0 +1,2 @@
+module Providers::OpeningTimesHelper
+end

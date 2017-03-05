@@ -1,6 +1,69 @@
-<h1>Editing Provider</h1>
+<%= render 'layouts/backend_admins/_backend_header' %>
+<div class="container-fluid">
+    <div class="row">
+        <%= render 'layouts/backend_admins/_sidebar' %>
 
-<%= render 'form', provider: @provider %>
+        <div class="col-md-offset-2 container-fluid">
 
-<%= link_to 'Show', @provider %> |
-<%= link_to 'Back', providers_path %>
+            <div class="page-header">
+                <%= button_to('Back To All Providers', {:action => 'index', :controller => '/providers'}, method: :get, class: 'btn btn-primary', :style => 'float: right;' ) %>
+
+                <h2 style="text-align: left; display: inline;">Edit Provider</h2>
+            </div>
+
+            <div class="row">
+                <%= form_for :provider, url: provider_path(@provider), method: :patch do |f| %>
+                <% if @provider.errors.any? %>
+                <div id="error_explanation">
+                    <h2>
+                        <%= pluralize(@provider.errors.count, "error") %>
+                        prohibited this article from being saved:
+                    </h2>
+                    <ul>
+                        <% @provider.errors.full_messages.each do |msg| %>
+                        <li><%= msg %></li>
+                        <% end %>
+                    </ul>
+                </div>
+                <% end %>
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <%= f.label :Name, style: 'float: left;' %>
+                        <%= f.text_field :name, class: 'form-control', value: @provider.name  %>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <%= f.label :Payment_Type, style: 'float: left;' %>
+                        <%= f.text_field :payment_type, class: 'form-control', value: @provider.payment_type  %>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <%= f.label :Branch, style: 'float: left;' %>
+                        <%= f.text_field :branch, class: 'form-control', value: @provider.branch  %>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <%= f.label :Bank_Detail, style: 'float: left;' %>
+                        <%= f.text_field :bank_detail, class: 'form-control', value: @provider.bank_detail %>
+                    </div>
+                </div>
+
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <%= f.submit "Update Provider", class:'btn btn-default', style: 'float: left;' %>
+                    </div>
+                </div>
+
+            </div>
+            <% end %>
+
+        </div>
+    </div>
+
+    <%= render 'layouts/backend_admins/_footer' %>

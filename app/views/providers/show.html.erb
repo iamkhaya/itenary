@@ -1,4 +1,53 @@
-<p id="notice"><%= notice %></p>
+<%= render 'layouts/backend_admins/_backend_header' %>
+<div class="container-fluid">
+    <div class="row">
+        <%= render 'layouts/backend_admins/_sidebar' %>
 
-<%= link_to 'Edit', edit_provider_path(@provider) %> |
-<%= link_to 'Back', providers_path %>
+        <%= form_for :provider, url: providers_path do |f| %>
+        <div class="col-md-offset-2 container-fluid">
+
+            <div class="page-header">
+                <h2 style="text-align: left;">View Provider</h2>
+            </div>
+
+            <div class="row">
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <%= f.label :Name, style: 'float: left;' %>
+                        <%= f.text_field :name, class: 'form-control', value: @provider.name,:readonly => true %>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <%= f.label :Payment_Type, style: 'float: left;' %>
+                        <%= f.text_field :payment_type, class: 'form-control', value: @provider.payment_type,:readonly => true %>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <%= f.label :Branch, style: 'float: left;' %>
+                        <%= f.text_field :branch, class: 'form-control', value: @provider.branch,:readonly => true %>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <%= f.label :Bank_Detail, style: 'float: left;' %>
+                        <%= f.text_field :bank_detail, class: 'form-control', value: @provider.bank_detail,:readonly => true %>
+                    </div>
+                </div>
+
+                <div class="col-md-12">
+
+                    <div class="form-group">
+                        <%= button_to('Back To All Providers', {:action => 'index', :controller => '/providers'}, method: :get, class: 'btn btn-primary', :style => 'float: left;' ) %>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <% end %>
+    <%= render 'layouts/backend_admins/_footer' %>

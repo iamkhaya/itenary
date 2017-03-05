@@ -1,35 +1,44 @@
 class ActivitiesController < ApplicationController
   def index
+    # render :layout => false
     @activities = Activity.paginate(page: params[:page], per_page: 5).order('id Desc').all
+    render :layout => false
   end
 
   def show
-      @activities = Activity.paginate(page: params[:page], per_page: 5).order('id Desc').all
+      @activity = Activity.find(params[:id])
+      render :layout => false
   end
 
   def edit
     @activity = Activity.find(params[:id])
+    render :layout => false
   end
 
-  def new; end
+  def new
+    render :layout => false
+  end
 
   def destroy
     @activity = Activity.find(params[:id])
     @activity.destroy
 
     redirect_to action: 'index'
+
   end
 
   def create
     @activity = Activity.new(activity_params)
     @activity.save
     redirect_to action: 'index'
+
   end
 
   def update
     @activity = Activity.find(params[:id])
     if @activity.update(activity_params)
       redirect_to action: 'index'
+
     else
       render 'edit'
     end
