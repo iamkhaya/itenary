@@ -17,12 +17,14 @@ class Providers::OpeningTimesController < ApplicationController
   # GET /providers/opening_times/new
   def new
     @providers_opening_time = Providers::OpeningTime.new
+    @button_text = 'Add New Branch Opening Times'
     render :layout=>false
   end
 
   # GET /providers/opening_times/1/edit
   def edit
     render :layout =>false
+    @button_text = 'Update Branch Opening Times'
   end
 
   # POST /providers/opening_times
@@ -46,7 +48,7 @@ class Providers::OpeningTimesController < ApplicationController
   def update
     respond_to do |format|
       if @providers_opening_time.update(providers_opening_time_params)
-        format.html { redirect_to @providers_opening_time, notice: 'Opening time was successfully updated.' }
+        format.html { redirect_to providers_opening_times_path, notice: 'Opening time was successfully updated.' }
         format.json { render :show, status: :ok, location: @providers_opening_time }
       else
         format.html { render :edit }

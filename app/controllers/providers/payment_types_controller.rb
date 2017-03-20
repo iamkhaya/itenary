@@ -17,12 +17,14 @@ class Providers::PaymentTypesController < ApplicationController
   # GET /providers/payment_types/new
   def new
     @providers_payment_type = Providers::PaymentType.new
+    @button_text = 'Add New Payment Type'
     render :layout=>false
   end
 
   # GET /providers/payment_types/1/edit
   def edit
     render :layout=>false
+    @button_text = 'Update Payment Type'
   end
 
   # POST /providers/payment_types
@@ -47,7 +49,7 @@ class Providers::PaymentTypesController < ApplicationController
   def update
     respond_to do |format|
       if @providers_payment_type.update(providers_payment_type_params)
-        format.html { redirect_to @providers_payment_type, notice: 'Payment type was successfully updated.' }
+        format.html { redirect_to providers_payment_types_path, notice: 'Payment type was successfully updated.' }
         format.json { render :show, status: :ok, location: @providers_payment_type }
       else
         format.html { render :edit }

@@ -5,74 +5,8 @@
 
         <p id="notice"><%= notice %></p>
 
-        <%= form_for(@address) do |f| %>
-        <div class="col-md-offset-2 container-fluid">
-            <% if @address.errors.any? %>
-            <div id="error_explanation">
-                <h2><%= pluralize(@address.errors.count, "error") %>
-                    prohibited this address from being saved:</h2>
+        <%= render 'form', providers_bank_detail: @providers_bank_detail %>
 
-                <ul>
-                    <% @address.errors.full_messages.each do |message| %>
-                    <li><%= message %></li>
-                    <% end %>
-                </ul>
-            </div>
-            <% end %>
-
-            <div class="page-header">
-                <h2 style="text-align: left;">Address</h2>
-            </div>
-
-            <div class="row">
-
-                <div class="col-md-6">
-                    <div class="form-group">
-
-                        <%= f.label :bank %>
-                        <%= f.number_field :bank , class: 'form-control', value: @providers_bank_detail.bank, :readonly => true%>
-                    </div>
-                </div>
-
-                <div class="col-md-6">
-                    <div class="form-group">
-
-                        <%= f.label :bank %>
-                        <%= f.number_field :bank , class: 'form-control', value: @providers_bank_detail.account_number, :readonly => true%>
-                    </div>
-                </div>
-
-                <div class="col-md-6">
-                    <div class="form-group">
-
-                        <%= f.label :bank %>
-                        <%= f.number_field :bank , class: 'form-control', value: @providers_bank_detail.branch,:readonly => true%>
-                    </div>
-                </div>
-
-                <div class="col-md-6">
-                    <div class="form-group">
-
-                        <%= f.label :bank %>
-                        <%= f.number_field :bank , class: 'form-control', value: @providers_bank_detail.branch_code, :readonly => true%>
-                    </div>
-                </div>
-
-                <div class="col-md-6">
-                    <div class="form-group">
-
-                        <%= f.label :bank %>
-                        <%= f.number_field :bank , class: 'form-control', value: @providers_bank_detail.swift_code, :readonly => true%>
-                    </div>
-                </div>
-
-                <%= link_to 'Edit', edit_providers_bank_detail_path(@providers_bank_detail) %>
-                |
-                <%= link_to 'Back', providers_bank_details_path %>
-
-            </div>
-        </div>
-        <% end %>
 
     </div>
 </div>

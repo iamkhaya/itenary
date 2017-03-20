@@ -1,58 +1,60 @@
 <%= form_for(providers_opening_time) do |f| %>
 <div class="col-md-offset-2 container-fluid">
-  <% if providers_opening_time.errors.any? %>
+    <% if providers_opening_time.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(providers_opening_time.errors.count, "error") %> prohibited this providers_opening_time from being saved:</h2>
+        <h2><%= pluralize(providers_opening_time.errors.count, "error") %>
+            prohibited this providers_opening_time from being saved:</h2>
 
-      <ul>
-      <% providers_opening_time.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+        <ul>
+            <% providers_opening_time.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+            <% end %>
+        </ul>
     </div>
-  <% end %>
+    <% end %>
 
-.061l0l0,0,0ui                               nzsw
+    <div class="page-header">
+        <h2 style="text-align: left;">Add Branch Opening Time</h2>
+    </div>
+
     <div class="row">
-      <div class="col-md-6">
-          <div class="form-group">
+        <div class="col-md-6">
+            <div class="form-group">
 
-              <%= f.label :opening_time %>
-              <%= f.number_field :opening_time , class: 'form-control', placeholder:'Opening Time'%>
-          </div>
-      </div>
+                <%= f.label :opening_time %>
+                <%= f.number_field :opening_time , class: 'form-control', placeholder:'Opening Time'%>
+            </div>
+        </div>
 
-      <div class="col-md-6">
-          <div class="form-group">
+        <div class="col-md-6">
+            <div class="form-group">
 
-              <%= f.label :timestamp %>
-              <%= f.number_field :timestamp , class: 'form-control', placeholder:'Timestamp'%>
-          </div>
-      </div>
+                <%= f.label :timestamp %>
+                <%= f.number_field :timestamp , class: 'form-control', placeholder:'Timestamp'%>
+            </div>
+        </div>
 
-      <div class="col-md-6">
-          <div class="form-group">
+        <div class="col-md-6">
+            <div class="form-group">
 
-              <%= f.label :closing_time %>
-              <%= f.datetime_select :closing_time , class: 'form-control', placeholder:':Closing Time'%>
-          </div>
-      </div>
+                <%= f.label :closing_time %>
+                <%= f.datetime_select :closing_time , class: 'form-control', placeholder:':Closing Time'%>
+            </div>
+        </div>
 
-      <div class="col-md-6">
-          <div class="form-group">
+        <div class="col-md-6">
+            <div class="form-group">
 
-              <%= f.label :day_of_week %>
-              <%= f.text_field :day_of_week , class: 'form-control', placeholder:'Day Of the Week'%>
-          </div>
-      </div>
+                <%= f.label :day_of_week %>
+                <%= f.text_field :day_of_week , class: 'form-control', placeholder:'Day Of the Week'%>
+            </div>
+        </div>
 
-
-
-  <div class="col-md-12">
-      <div class="form-group">
-          <%= f.submit "Add New Officehours", class:'btn btn-default', style: 'float: left;' %>
-      </div>
-  </div>
+        <div class="col-md-12">
+            <div class="form-group">
+                <%= f.submit @button_text, class:'btn btn-default', style: 'float: left;' %>
+            </div>
+        </div>
     </div>
 
-<% end %>
+    <% end %>

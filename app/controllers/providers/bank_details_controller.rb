@@ -18,12 +18,14 @@ class Providers::BankDetailsController < ApplicationController
   # GET /providers/bank_details/new
   def new
     @providers_bank_detail = Providers::BankDetail.new
+    @button_text = 'Add New Bank Details'
     render :layout => false
   end
 
   # GET /providers/bank_details/1/edit
   def edit
     render :layout => false
+    @button_text = 'Update Bank Details'
   end
 
   # POST /providers/bank_details
@@ -47,7 +49,7 @@ class Providers::BankDetailsController < ApplicationController
   def update
     respond_to do |format|
       if @providers_bank_detail.update(providers_bank_detail_params)
-        format.html { redirect_to @providers_bank_detail, notice: 'Bank detail was successfully updated.' }
+        format.html { redirect_to providers_bank_details_path, notice: 'Bank detail was successfully created.' }
         format.json { render :show, status: :ok, location: @providers_bank_detail }
       else
         format.html { render :edit }

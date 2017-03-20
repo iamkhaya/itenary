@@ -1,4 +1,5 @@
 <%= form_for(providers_payment_type) do |f| %>
+<div class="col-md-offset-2 container-fluid">
   <% if providers_payment_type.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(providers_payment_type.errors.count, "error") %> prohibited this providers_payment_type from being saved:</h2>
@@ -11,12 +12,18 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :type %>
-    <%= f.text_field :payment_type %>
+  <div class="col-md-6">
+      <div class="form-group">
+          <%= f.label :type , style: 'float: left;' %>
+          <%= f.text_field :payment_type , class: 'form-control', placeholder:'Payment Type' %>
+      </div>
   </div>
 
-  <div class="actions">
-    <%= f.submit %>
+
+  <div class="col-md-12">
+      <div class="form-group">
+          <%= f.submit @button_text, class:'btn btn-default', style: 'float: left;' %>
+      </div>
   </div>
 <% end %>
+</div>

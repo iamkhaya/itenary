@@ -1,6 +1,12 @@
-<h1>Editing Providers Payment Type</h1>
+<%= render 'layouts/backend_admins/_backend_header' %>
+<div class="container-fluid">
+    <div class="row">
+        <%= render 'layouts/backend_admins/_sidebar' %>
+        <%= render 'form', providers_payment_type:  @providers_payment_type %>
 
-<%= render 'form', providers_payment_type: @providers_payment_type %>
+        <%= link_to 'Show', @providers_payment_type %> |
+        <%= link_to 'Back', providers_payment_types_path %>
 
-<%= link_to 'Show', @providers_payment_type %> |
-<%= link_to 'Back', providers_payment_types_path %>
+    </div>
+</div>
+<%= render 'layouts/backend_admins/_footer' %>

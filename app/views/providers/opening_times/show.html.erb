@@ -1,24 +1,12 @@
-<p id="notice"><%= notice %></p>
+<%= render 'layouts/backend_admins/_backend_header' %>
+<div class="container-fluid">
+    <div class="row">
+        <%= render 'layouts/backend_admins/_sidebar' %>
+        <%= render 'form', providers_opening_time: @providers_opening_time %>
 
-<p>
-  <strong>Opening time:</strong>
-  <%= @providers_opening_time.opening_time %>
-</p>
-
-<p>
-  <strong>Timestamp:</strong>
-  <%= @providers_opening_time.timestamp %>
-</p>
-
-<p>
-  <strong>Closing time:</strong>
-  <%= @providers_opening_time.closing_time %>
-</p>
-
-<p>
-  <strong>Day of week:</strong>
-  <%= @providers_opening_time.day_of_week %>
-</p>
-
-<%= link_to 'Edit', edit_providers_opening_time_path(@providers_opening_time) %> |
-<%= link_to 'Back', providers_opening_times_path %>
+        <%= link_to 'Edit', edit_providers_opening_time_path(@providers_opening_time) %> |
+        <%= link_to 'Back', providers_opening_times_path %>
+        
+    </div>
+</div>
+<%= render 'layouts/backend_admins/_footer' %>

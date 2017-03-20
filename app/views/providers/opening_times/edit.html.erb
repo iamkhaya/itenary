@@ -1,6 +1,9 @@
-<h1>Editing Providers Opening Time</h1>
+<%= render 'layouts/backend_admins/_backend_header' %>
+<div class="container-fluid">
+    <div class="row">
+        <%= render 'layouts/backend_admins/_sidebar' %>
+        <%= render 'form', providers_opening_time: @providers_opening_time %>
 
-<%= render 'form', providers_opening_time: @providers_opening_time %>
-
-<%= link_to 'Show', @providers_opening_time %> |
-<%= link_to 'Back', providers_opening_times_path %>
+    </div>
+</div>
+<%= render 'layouts/backend_admins/_footer' %>
