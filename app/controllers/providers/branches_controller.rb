@@ -17,11 +17,13 @@ class Providers::BranchesController < ApplicationController
   # GET /providers/branches/new
   def new
     @providers_branch = Providers::Branch.new
+    @button_text = 'Add New Branch'
     render :layout=>false
   end
 
   # GET /providers/branches/1/edit
   def edit
+    @button_text = 'Update Branch'
     render :layout=>false
   end
 
@@ -33,7 +35,7 @@ class Providers::BranchesController < ApplicationController
     respond_to do |format|
       if @providers_branch.save
         format.html { redirect_to providers_branches_path, notice: 'Branch was successfully created.' }
-        format.json { render :show, status: :created, location: @providers_branch }
+        format.json { redirect_to providers_branches_path, status: :created, location: @providers_branch }
       else
         format.html { render :new }
         format.json { render json: @providers_branch.errors, status: :unprocessable_entity }
@@ -46,8 +48,8 @@ class Providers::BranchesController < ApplicationController
   def update
     respond_to do |format|
       if @providers_branch.update(providers_branch_params)
-        format.html { redirect_to @providers_branch, notice: 'Branch was successfully updated.' }
-        format.json { render :show, status: :ok, location: @providers_branch }
+        format.html { redirect_to providers_branches_path, notice: 'Branch was successfully updated.' }
+        format.json { redirect_to providers_branches_path, status: :ok, location: @providers_branch }
       else
         format.html { render :edit }
         format.json { render json: @providers_branch.errors, status: :unprocessable_entity }
