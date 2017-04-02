@@ -16,6 +16,7 @@ class ActivitiesController < ApplicationController
   end
 
   def new
+    @categories = Category.all
     render :layout => false
   end
 
@@ -29,6 +30,7 @@ class ActivitiesController < ApplicationController
 
   def create
     @activity = Activity.new(activity_params)
+    binding.pry
     @activity.save
     redirect_to action: 'index'
 

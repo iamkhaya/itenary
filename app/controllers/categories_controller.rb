@@ -21,6 +21,7 @@ class CategoriesController < ApplicationController
 
   def create
     @category = Category.new(category_params)
+    binding.pry
     @category.save
     redirect_to action: 'index'
   end
